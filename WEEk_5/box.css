@@ -1,0 +1,15 @@
+.box{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(152, 152, 231);
+    border: 2px solid black;
+    margin:auto;
+    padding: 100px;
+    text-align:center;
+}
+@media (max-width:600px){
+    .box{
+       background-color: rgb(5, 36, 46);
+    }
+}
