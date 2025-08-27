@@ -1,0 +1,43 @@
+/* p { 
+    color:brown;
+    font-family: poppins;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5;       
+}
+ */
+
+body {
+    background-color: rgb(255 203 70 / 73%)
+}
+.para {
+    color: rgb(235 45 43);
+    font-family: poppins;
+    font-size: 10rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    line-height: 1.5;
+} 
+
+
+.para-blue {
+    color: #0000ff;
+    font-family: 'Times New Roman';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
