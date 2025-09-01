@@ -1,0 +1,27 @@
+p{
+    color: #f7f5f5;
+    font-family: italic / poppins; 
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: underline;
+    background-color: #000000;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding: 50px;
+    padding: 50px;
+}
+p {
+    color: #f7f5f5;
+    font-family: italic / poppins; 
+    font-size: 50px;
+    text-align: bottom;
+    font-weight: 700;
+    text-decoration: underline;
+    background-color: #000000;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-bottom: 10px;
+    /*padding-inline: 50px;*/
+    border:10px solid #f70000;
+}
