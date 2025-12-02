@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>JS DOM Manipulation</title>
+</head>
+<body>
+
+  <p class="paragraph">This is paragraph 1</p>
+  <div class="paragraph">This is paragraph 2</div>
+
+  <script>
+    const paragraphs = document.getElementsByClassName('paragraph');
+
+    // for (let i = 0; i < paragraphs.length; i++) {
+    //   if (i === 0) {
+    //     paragraphs[i].textContent = "This is first paragraph";
+    //   } else if (i === 1) {
+    //     paragraphs[i].textContent = "This is second paragraph";
+    //   }
+    // }
+
+    const paragraph= document.querySelectorAll('.paragraph');
+    const paralength= paragraphs.length;
+    for (let i=1; i<=paralength; i++){
+      if (i===1){
+        paragraph[i-1].textContent="this is first paragraph";
+      }
+      else if (i===2){
+        paragraph[i-1].textContent="this is second paragraph";
+      }
+    
+    }
+    text = document.getElementById('title');
+    text.classList.add('text-red');
+    <h1 id='title'>This is title</h1>
+  </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS DOM Manipulation</title>
+  <style>
+    .text-red {
+      color: red;
+    }
+    .text-blue {
+      color: blue;
+    }
+    .text-green {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">This is title</h1>
+  <p class="paragraph">This is paragraph 1</p>
+  <div class="paragraph">This is paragraph 2</div>
+
+  <button id="btnRed">Red</button>
+  <button id="btnBlue">Blue</button>
+  <button id="btnGreen">Green</button>
+
+  <script>
+    
+    const paragraphs = document.querySelectorAll('.paragraph');
+
+   
+    for (let i = 0; i < paragraphs.length; i++) {
+      if (i === 0) {
+        paragraphs[i].textContent = "This is first paragraph";
+      } else if (i === 1) {
+        paragraphs[i].textContent = "This is second paragraph";
+      }
+    }
+    function resetColor() {
+        title.classList.remove('text-Red', 'text-Blue', 'text-Green');
+    }
+
+    const title = document.getElementById('title');
+    title.classList.add('text-Red');
+
+    const btnRed = document.getElementById('btnRed');
+    btnRed.addEventListener('click',() => {
+        title.classList.add('text-Red');
+    });
+    
+    const btnBlue = document.getElementById('btnBlue');
+    btnBlue.addEventListener('click', () => {
+      title.classList.add('text-Blue');
+    });
+
+    const btnGreen = document.getElementById('btnGreen');
+    btnGreen.addEventListener('click', () => {
+      title.classList.add('text-Green');
+    });
+    
+  </script>
+
+</body>
+</html>
