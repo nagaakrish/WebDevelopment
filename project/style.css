@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display';
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 30px 50px;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    transition: opacity 0.3s;
+    font-family: 'Playfair Display';
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;           
+    text-align: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Title */
+.hero-title {
+    position: absolute;
+    left: 176px;
+    top: 196px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 0.95;
+    z-index: 10;
+    padding: 50px 100px;
+}
+
+/* Subtitle */
+.subtitle {
+    position: absolute;
+    left: 1100px;
+    top: 600px;
+    bottom: 0;
+    letter-spacing: 4px;
+    font-family: 'Playfair Display';
+    font-weight: regular;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+/* Left Ko Photo */
+.photo-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500px; 
+    height: auto;
+    bottom: 50px;
+    
+}
+
+.photo-left img {
+    width: 120%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;  
+    display: block; 
+}
+
+/* Right Ko Photo */
+.photo-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 520px;
+    padding-top: 100px;
+    height: auto;
+}
+
+.photo-right img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(to top, #2C2C2C 0%, #4A4A4A 50%, #D4A574 100%);
+    clip-path: polygon(0 100%, 0 40%, 20% 60%, 35% 30%, 50% 50%, 65% 20%, 80% 45%, 100% 35%, 100% 100%);
+}
+
+.photographer-name {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    z-index: 10;
+    font-family: "playfair display";
+}
+
+
+/* Works Section */
+.works-section {
+    padding: 100px 50px;
+    background-color: #000;
+}
+
+.works-title {
+    font-size: 120px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    height: 450px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+    background-color: #222;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:first-child {
+    grid-row: span 2;
+    height: 930px;
+}
+
+.gallery-item:nth-child(4) {
+    grid-row: span 2;
+    height: 930px;
+}
+
+/* Video Section */
+.video-section {
+    padding: 100px 50px;
+    background-color: #000;
+}
+
+.video-title {
+    font-size: 120px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+/* Grid Video Layout */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.video-item {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: #222;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-thumbnail iframe,
+.video-thumbnail video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.video-item.playing .video-thumbnail video {
+    object-fit: contain;
+}
+
+
+.video-item.vertical.playing .video-thumbnail video {
+    object-fit: contain;
+}
+
+
+.video-thumbnail video:fullscreen {
+    object-fit: contain;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.3s ease;
+    z-index: 10;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.play-overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.video-item:hover .play-overlay:not(.hide) {
+    background: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 20px solid #000;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 5px;
+}
+
+.video-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    z-index: 5;
+}
+
+.video-brand {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+}
+
+.video-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    font-family: 'Playfair Display';
+}
+
+
+.video-item:first-child {
+    grid-row: span 2;
+    height: 930px;
+}
+
+.video-item:nth-child(4) {
+    grid-row: span 2;
+    height: 930px;
+}
+
+/* Horizontal Scroll Layout */
+.video-scroll-section {
+    padding: 100px 50px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.scroll-title {
+    font-size: 120px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+.video-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #000;
+}
+
+.video-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.video-scroll-container::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.video-scroll-container::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.video-scroll-item {
+    display: inline-block;
+    width: 500px;
+    height: 450px;
+    margin-right: 30px;
+    vertical-align: top;
+    white-space: normal;
+    position: relative;
+    background-color: #222;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.video-scroll-item:hover {
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about-section {
+    padding: 100px 50px;
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-left {
+    padding-right: 50px;
+}
+
+.about-title {
+    font-size: 90px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+    font-family: 'Playfair Display';
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.behind-camera-title {
+    font-size: 90px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Playfair Display';
+}
+
+.camera-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.camera-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 50px;
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-title {
+    font-size: 90px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #444;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.submit-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 15px 60px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .hero-left,
+    .hero-right {
+        min-height: 50vh;
+    }
+
+    .hero-title {
+        font-size: 80px;
+    }
+
+    .works-title,
+    .about-title,
+    .contact-title,
+    .behind-camera-title,
+    .video-title,
+    .scroll-title {
+        font-size: 60px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item:first-child,
+    .gallery-item:nth-child(4) {
+        grid-row: span 1;
+        height: 450px;
+    }
+
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-item:first-child,
+    .video-item:nth-child(4) {
+        grid-row: span 1;
+        height: 450px;
+    }
+
+    .video-scroll-item {
+        width: 400px;
+    }
+
+    .photo-right {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .photographer-name {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 20px 30px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero-title {
+        font-size: 50px;
+    }
+
+    .works-title,
+    .about-title,
+    .contact-title,
+    .behind-camera-title,
+    .video-title,
+    .scroll-title {
+        font-size: 40px;
+    }
+
+    .photo-left {
+        width: 300px;
+        height: 250px;
+    }
+
+    .about-left {
+        padding-right: 0;
+    }
+
+    .video-section,
+    .video-scroll-section {
+        padding: 100px 30px;
+    }
+
+    .video-scroll-item {
+        width: 300px;
+        height: 350px;
+    }
+
+    .video-item {
+        height: 350px;
+    }
+
+    .video-name {
+        font-size: 20px;
+    }
+}
